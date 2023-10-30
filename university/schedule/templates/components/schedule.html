@@ -1,0 +1,45 @@
+<div class="schedule-wrapper">
+
+    <div class="top">
+        <span>Расписание группы {{ group.name }}</span>
+    </div>
+
+    <div class="bottom">
+
+        {% for lesson in group.get_schedule %}
+
+            <div class="events-wrapper">
+
+                <span class="title">{{ lesson.get_day_of_week }}</span>
+
+                <div class="events-container">
+                    <div class="event-item">
+                        <div class="event-info">
+                            <div class="title">
+                                <i class="fa fa-circle"></i>
+                                <h3 class="event-title">{{ lesson.discipline }}</h3>
+                            </div>
+                            <div class="info">
+                                <div>{{ lesson.get_start_time }} - {{ lesson.get_end_time }}</div>
+                                <div>{{ lesson.teacher }}</div>
+                                <div>{{ lesson.audience }}</div>
+                            </div>
+                        </div>
+                        <i class="fa fa-edit"></i>
+                    </div>
+                </div>
+
+
+
+
+                <button class="add-event">
+                    <i class="fa fa-plus"></i>
+                </button>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>

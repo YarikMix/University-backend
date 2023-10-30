@@ -1,0 +1,38 @@
+<div class="students-wrapper">
+    <div class="top">
+
+        <span>Студенты группы {{ group.name }}</span>
+
+    </div>
+
+    <div class="bottom">
+
+        {% for student in group.get_students %}
+           <div class="card">
+                <div class="card-inner">
+                    <div class="front" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/media/{{ student.photo }}') no-repeat 50% 20% / cover">
+                        <span>{{ student.middle_name }} {{student.first_name}} {{ student.last_name }}</span>
+                    </div>
+                    <div class="back">
+                        <span class="name">{{ student.middle_name }} {{student.first_name}} {{ student.last_name }}</span>
+
+                        {% if student.gender == 0 %}
+                            <span>Пол: Мужской</span>
+                        {% else %}
+                            <span>Пол: Женский</span>
+                        {% endif %}
+
+                        <span>Возраст: {{ student.age }} лет</span>
+                        <span>Дата рождения: {{ student.birthday_date }}</span>
+                        <span>Основа обучения: Бюджет</span>
+                        <span>Общежитие: Не проживает</span>
+                        <span>Зачисление: Общий конкурс</span>
+                        <span>Средний балл: {{ student.average_score }}</span>
+                        <span>Стипендия: {{ student.grant }}</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+</div>

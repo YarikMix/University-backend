@@ -1,0 +1,16 @@
+{% load static %}
+
+<div class="profile-wrapper">
+    <div class="cover-bg"></div>
+    <div class="profile-info">
+        <img src="{% static 'images/admin/stonks.jpg' %}" class="profile-avatar">
+        <h1>{{ username }}</h1>
+
+        <a href="/" class="logout-wrapper">
+            <button type="submit" class="logout-btn">
+                <span>Выйти</span>
+                <i class="fa fa-sign-out"></i>
+            </button>
+        </a>
+    </div>
+</div>

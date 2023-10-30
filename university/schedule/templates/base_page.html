@@ -1,0 +1,21 @@
+{% load sass_tags %}
+{% load static %}
+
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+	<meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="{% sass_src 'css/utils/reset.sass' %}">
+    <link rel="stylesheet" href="{% sass_src 'css/utils/fonts.sass' %}">
+    <link rel="stylesheet" href="{% static 'css/utils/font-awesome.css' %}">
+    <link rel="stylesheet" href="{% sass_src 'css/main.sass' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/gerb.ico' %}" />
+</head>
+<body>
+    {% block content %}
+
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,66 @@
+<div class="groups-wrapper">
+
+    <div class="top">
+
+        <h3>Выберите группу</h3>
+
+        <form class="search-bar" action="/" method="GET">
+
+            {% csrf_token %}
+
+            <input type="text" placeholder="Введите название группы" name="query" value="{{ search_query }}">
+
+            <button type="submit">
+              <i class="fa fa-search"></i>
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="bottom">
+        <div class="group-list-wrapper">
+
+            <div class="top-wrapper">
+
+            </div>
+
+            <div class="center-wrapper">
+
+                {% for group in groups %}
+
+                    <div>
+                       <div class="group">
+
+                           <div class="left-container">
+                                <img class="facult-image" src="/media/{{ group.get_icon }}">
+                                <span class="group-name">{{ group.name }}</span>
+                           </div>
+
+                            <div class="right-container">
+
+                                <a href="{{ group.get_absolute_url }}">
+                                    <button class="group-info-button">Открыть</button>
+                                </a>
+
+                                <a href="delete-group/{{ group.id }}">
+                                    <button class="group-delete-button">Удалить</button>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+
+            </div>
+
+            <div class="bottom-wrapper">
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
