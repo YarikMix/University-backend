@@ -1,0 +1,176 @@
+@mixin schedule
+	.schedule-wrapper
+		width: 100%
+		background: #fff
+		border-radius: 15px
+		padding: 20px
+		overflow: hidden
+		display: flex
+		flex-direction: column
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1)
+
+		@media screen and (max-width: 400px)
+			padding: 10px
+
+		.top
+			width: 100%
+			display: flex
+			justify-content: center
+			align-items: center
+			margin-bottom: 20px
+
+			span
+				font-size: 24px
+				font-weight: bold
+
+				@media screen and (max-width: 400px)
+					font-size: 20px
+
+
+		.bottom
+			width: 100%
+			display: flex
+			flex-wrap: wrap
+			gap: 25px
+			justify-content: center
+
+			.events-wrapper
+				display: flex
+				flex-direction: column
+				align-items: center
+				flex-basis: calc((100% / 2) - 50px)
+				background: $secondary
+				position: relative
+				border-radius: 15px
+				padding: 20px
+
+				@media screen and (max-width: 968px)
+					flex: 1 1 100%
+
+				@media screen and (max-width: 400px)
+					padding: 10px
+
+				.title
+					color: #ccc
+					font-size: 20px
+					margin-bottom: 15px
+
+
+
+				.add-event
+					width: 40px
+					height: 40px
+					color: #878895
+					border: 2px solid #878895
+					opacity: 0.5
+					border-radius: 50%
+					background-color: transparent
+					cursor: pointer
+					position: absolute
+					right: 25px
+					bottom: 25px
+
+					&:hover
+						opacity: 1
+
+					i
+						pointer-events: none
+
+
+				.events-container
+					width: 100%
+					display: flex
+					flex-direction: column
+					margin-bottom: 50px
+					justify-content: center
+					align-items: center
+					min-height: 200px
+
+
+					.sub-title
+						color: #ccc
+						font-size: 16px
+
+					.event-item
+						position: relative
+						width: 95%
+						min-height: 70px
+						display: flex
+						justify-content: space-between
+						align-items: center
+						gap: 5px
+						padding: 0 20px 0 10px
+						color: #fff
+						cursor: pointer
+						background: linear-gradient(90deg, #3f4458, transparent)
+
+						&:nth-child(even)
+							background: transparent
+
+						&::after
+							content: ""
+							position: absolute
+							top: 50%
+
+						&:hover
+							background: linear-gradient(90deg, $primary, transparent)
+
+							.fa-edit
+								opacity: 0.3
+
+							.event-info
+								color: #fff
+								.title
+									.event-title
+										color: #fff
+
+									i
+										color: #fff
+
+								.info
+									div
+										color: #fff
+
+						@media screen and (max-width: 1420px)
+							padding: 0
+
+						@media screen and (max-width: 520px)
+							width: 100%
+
+						.event-info
+							display: flex
+							flex-direction: column
+
+							.title
+								display: flex
+								align-items: center
+								pointer-events: none
+								margin-bottom: 4px
+
+								.event-title
+									font-size: 14px
+									font-weight: 400
+									margin-left: 10px
+
+								i
+									color: $primary
+									font-size: 10px
+
+							.info
+								display: flex
+
+								div
+									font-size: 12px
+									font-weight: 400
+									color: #878895
+									margin-right: 15px
+									pointer-events: none
+
+									&:last-child
+										margin-right: 0
+
+						.fa-edit
+							font-size: 22px
+							opacity: 0
+							color: $primary
+

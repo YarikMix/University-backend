@@ -1,0 +1,44 @@
+{% extends 'base_page.html' %}
+
+{% load static %}
+
+{% block title %}
+    Расписание группы {{ group_name }}
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="wrapper">
+
+        {% include 'components/navbar.html' %}
+
+
+        <div class="main-content">
+
+            <div class="left-wrapper">
+
+                 {% include 'components/profile.html'  %}
+
+                <a href="/" class="back-button-wrapper">
+                    <button class="back-button">Вернуться на главную страницу</button>
+                </a>
+
+            </div>
+
+
+            <div class="group-info-wrapper">
+
+                {% include 'components/students.html'  %}
+
+                {% include 'components/schedule.html'  %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+{% endblock %}

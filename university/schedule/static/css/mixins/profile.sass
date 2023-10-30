@@ -1,0 +1,88 @@
+@mixin profile
+	.profile-wrapper
+		width: 100%
+		background: #fff
+		border-radius: 15px
+		overflow: hidden
+		display: flex
+		flex-direction: column
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1)
+		margin-bottom: 50px
+
+		@media screen and (max-width: 1420px)
+			width: 100%
+			margin-bottom: 50px
+
+		@media screen and (max-width: 520px)
+			border-radius: 0
+			
+		.cover-bg
+			object-fit: cover
+			height: 150px
+			width: 100%
+			background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("static/../../images/cover-pic.jpg") no-repeat 50% 20% / cover
+
+		.profile-info
+			padding: 0 25px
+			position: relative
+
+			.profile-avatar
+				width: 90px
+				height: 90px
+				border-radius: 50%
+				border: 4px solid #fff
+				margin-top: -45px
+				display: block
+				object-fit: cover
+
+				@media screen and (max-width: 1420px)
+					margin: -45px auto 0
+
+			h1
+				font-size: 20px
+				font-weight: 600
+				color: #222
+
+			h3
+				font-size: 14px
+				font-weight: 500
+				color: #777
+
+			ul
+				list-style: none
+				margin: 20px 0
+				padding: 0
+
+				li
+					width: 100%
+					margin: 5px 0
+					font-size: 13px
+
+					span
+						float: right
+						color: #045be6
+					
+			.logout-wrapper
+				text-decoration: none
+				width: 100px
+				height: 40px
+				display: block
+				margin: 20px 0
+
+				.logout-btn
+					width: 100%
+					height: 100%
+					display: flex
+					justify-content: space-around
+					align-items: center
+					background: $primary
+					border: 1px solid
+					border-radius: 10px
+					font-size: 16px
+					color: #e9f4fb
+					cursor: pointer
+					outline: none
+
+					&:hover
+						border-color: $primary
+						transition: ease 0.1s	

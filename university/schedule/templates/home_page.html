@@ -1,0 +1,34 @@
+{% extends 'base_page.html' %}
+
+{% load static %}
+
+{% block title %}
+    Панель администратора
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="wrapper">
+
+        {% include 'components/navbar.html' %}
+
+
+        <div class="main-content">
+
+            <div class="left-wrapper">
+
+                 {% include 'components/profile.html'  %}
+
+            </div>
+
+
+            {% include 'components/groups.html' %}
+
+        </div>
+
+    </div>
+
+
+
+{% endblock %}

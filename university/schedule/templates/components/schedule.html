@@ -1,0 +1,59 @@
+<div class="schedule-wrapper">
+
+    <div class="top">
+        <span>Расписание группы {{ group_name }}</span>
+    </div>
+
+    <div class="bottom">
+
+        {% for schedule_item in schedule %}
+
+            <div class="events-wrapper">
+
+                <span class="title">{{ schedule_item.day }}</span>
+
+                <div class="events-container">
+
+                    {% if schedule_item.lessons|length == 0 %}
+
+                         <span class="sub-title">Самостоятельная работа</span>
+
+                    {% else %}
+
+                              {% for lesson in schedule_item.lessons %}
+
+                                <div class="event-item">
+                                    <div class="event-info">
+                                        <div class="title">
+                                            <i class="fa fa-circle"></i>
+                                            <h3 class="event-title">{{ lesson.discipline }}</h3>
+                                        </div>
+                                        <div class="info">
+                                            <div>{{ lesson.start_time }} - {{ lesson.end_time }}</div>
+                                            <div>{{ lesson.teacher }}</div>
+                                            <div>{{ lesson.audience }}</div>
+                                        </div>
+                                    </div>
+                                    <i class="fa fa-edit"></i>
+                                </div>
+
+                            {% endfor %}
+
+
+                    {% endif %}
+                </div>
+
+
+
+
+                <button class="add-event">
+                    <i class="fa fa-plus"></i>
+                </button>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
